@@ -3,7 +3,7 @@ services:
     # Mongo image
     mongodb:
         image: 'mongo'
-        container_name: 'mongodb'
+        container_name: 'jubo-db'
         volumes:
             - mongodata:/data/db
         restart: always
@@ -25,6 +25,7 @@ services:
     api:
         depends_on:
             - mongodb
+        container_name: 'jubo-server'
         build:
             dockerfile: Dockerfile.dev
             context: ./server
@@ -40,6 +41,7 @@ services:
     client:
         depends_on:
             - api
+        container_name: 'jubo-app'
         stdin_open: true
         build:
             dockerfile: Dockerfile.dev
