@@ -1,6 +1,7 @@
-const { Patient } = require('../models/');
+const { Patient } = require('../models');
 const AppRes = require('../utils/appResponse');
 const AppErr = require('../utils/appError');
+
 const patientService = {
     // Type definition
     /**
@@ -33,7 +34,10 @@ const patientService = {
         try {
             let data = {};
 
-            if (filters.hasOwnProperty('page') && filters.hasOwnProperty('limit')) {
+            if (
+                Object.prototype.hasOwnProperty.call(filters, 'page')
+                && Object.prototype.hasOwnProperty.call(filters, 'limit')
+            ) {
                 const { page = 1, limit = 10, sort = 'asc' } = filters;
                 const sortBy = sort === 'asc' ? 1 : -1;
                 const patient = await Patient.findById(id)
@@ -48,7 +52,7 @@ const patientService = {
                     });
 
                 data.orders = patient.orders;
-                data.currentPage = parseInt(page);
+                data.currentPage = parseInt(page, 10);
                 data.totalPage = Math.ceil(patient.ordersAmount / limit);
                 data.totalRows = patient.ordersAmount;
             } else {
@@ -88,6 +92,7 @@ const patientService = {
                 $push: { orders: orderId },
                 $inc: { ordersAmount: 1 },
             });
+            return new AppRes('Add Patient Ref Orders successfully');
         } catch (err) {
             return new AppErr(`Add Patient Ref Orders: ${err.message}`, 500);
         }

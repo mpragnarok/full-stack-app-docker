@@ -2,6 +2,7 @@ const { Order } = require('../models');
 const AppRes = require('../utils/appResponse');
 const AppErr = require('../utils/appError');
 const patientService = require('./patientService');
+
 const orderService = {
     /**
      * @typedef Order

@@ -1,12 +1,13 @@
-const mongoose = require('mongoose'),
-    { Schema } = mongoose;
+const mongoose = require('mongoose');
+
+const { Schema } = mongoose;
 
 const patientSchema = new Schema({
     name: {
         type: String,
         trim: true,
-        min: [2, "Patient's name is too short"],
-        max: [50, "Patient's name is too long"],
+        min: [2, 'Patient\'s name is too short'],
+        max: [50, 'Patient\'s name is too long'],
         required: [true, 'A patient must have a name'],
     },
     orders: [
@@ -17,7 +18,7 @@ const patientSchema = new Schema({
     ],
     ordersAmount: {
         type: Number,
-        default: function () {
+        default() {
             return this.orders.length;
         },
     },

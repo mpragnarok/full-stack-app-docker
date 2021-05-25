@@ -1,5 +1,6 @@
-const mongoose = require('mongoose'),
-    { Schema } = mongoose;
+const mongoose = require('mongoose');
+
+const { Schema } = mongoose;
 
 const orderSchema = new Schema(
     {
@@ -13,7 +14,7 @@ const orderSchema = new Schema(
     {
         timestamps: true,
         toJSON: { virtuals: true },
-    }
+    },
 );
 const Order = mongoose.model('Order', orderSchema);
 

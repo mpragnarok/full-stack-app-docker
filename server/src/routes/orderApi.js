@@ -10,7 +10,7 @@ router.get('/:patientId', validateRequest(validateSchema.getOrdersByPatientId), 
 router.post(
     '/:patientId',
     validateRequest(validateSchema.addOrderWithPatientId),
-    orderController.addOrderWithPatientId
+    orderController.addOrderWithPatientId,
 );
 router.put('/:id', validateRequest(validateSchema.updateOrder), orderController.updateOrder);
 module.exports = router;

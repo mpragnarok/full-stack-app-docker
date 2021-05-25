@@ -24,5 +24,6 @@ module.exports = {
         'no-underscore-dangle': ['error', { allow: ['_id'] }],
 
         'max-len': ['error', { code: 120, ignoreStrings: true }],
+        'global-require': 0,
     },
 };
