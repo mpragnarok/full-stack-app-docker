@@ -27,8 +27,9 @@ The file structure show as below:
 
 If you are going to run the application with docker, the file you need to run is `Makefile`
 
-### Build and Run 
+### Build and Run
 
+Open the Terminal at the root directory.
 Before running the application, you need to build the images.
 
 ```
@@ -55,6 +56,11 @@ http://localhost:3050
 ```
 // When your server is up, sh into your server
 make sh c=jubo-server
+```
+
+Shout down the application
+```
+make down
 ```
 
 
