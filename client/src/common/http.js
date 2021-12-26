@@ -1,9 +1,9 @@
-import axios from 'axios';
-
-const rootApiUrl = 'http://localhost:3050/api/v1/';
+import axios from "axios";
+const rootUrl = process.env.baseURL || "http://localhost:3050";
+const rootApiUrl = `${rootUrl}/api/v1/`;
 export default axios.create({
-    baseURL: rootApiUrl,
-    headers: {
-        'Content-Type': 'application/json',
-    },
+  baseURL: rootApiUrl,
+  headers: {
+    "Content-Type": "application/json",
+  },
 });
