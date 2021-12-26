@@ -74,7 +74,7 @@ make down
 make build            # building all containers
 make build c=mongodb # building mongodb mongodb only
 make build c=api   # building api server only
-make build c=app      # building react app only
+make build c=client      # building react app only
 ```
 
 #### Up command
@@ -85,7 +85,7 @@ make build c=app      # building react app only
 make up            # up all containers
 make up c=mongodb # up mongodb only
 make up c=api   # up api server only
-make up c=app      # up app only
+make up c=client      # up app only
 ```
 
 #### Start command
@@ -96,7 +96,7 @@ make up c=app      # up app only
 make start            # starting all containers
 make start c=mongodb # starting mongodb only
 make start c=api   # starting api server only
-make start c=app      # starting app only
+make start c=client      # starting app only
 ```
 
 #### Down command
@@ -107,7 +107,7 @@ make start c=app      # starting app only
 make down            # delete all containers
 make down c=mongodb # delete mongodb only
 make down c=api   # delete api server only
-make down c=app      # delete app only
+make down c=client      # delete app only
 ```
 
 #### Restart command
@@ -118,7 +118,7 @@ make down c=app      # delete app only
 make restart            # restart all containers
 make restart c=mongodb # restart mongodb only
 make restart c=api   # restart api only
-make restart c=app      # restart app only
+make restart c=client      # restart app only
 ```
 
 #### Logs command
@@ -129,7 +129,7 @@ make restart c=app      # restart app only
 make log            # log all containers
 make log c=mongodb # log mongodb only
 make log c=api   # log api server only
-make log c=app      # log app only
+make log c=client      # log app only
 ```
 
 #### Sh command
